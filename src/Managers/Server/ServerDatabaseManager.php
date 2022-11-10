@@ -33,7 +33,7 @@ class ServerDatabaseManager extends Manager
      *
      * @return ServerDatabase
      */
-    public function get($serverId, int $databaseId, array $query = [])
+    public function get($serverId, string $databaseId, array $query = [])
     {
         return $this->http->get("servers/$serverId/databases/$databaseId", $query);
     }
@@ -59,7 +59,7 @@ class ServerDatabaseManager extends Manager
      *
      * @return void
      */
-    public function resetPassword($serverId, int $databaseId)
+    public function resetPassword($serverId, string $databaseId)
     {
         return $this->http->post("servers/$serverId/databases/$databaseId/reset-password");
     }
@@ -72,7 +72,7 @@ class ServerDatabaseManager extends Manager
      *
      * @return void
      */
-    public function delete($serverId, int $databaseId)
+    public function delete($serverId, string $databaseId)
     {
         return $this->http->delete("servers/$serverId/databases/$databaseId");
     }
